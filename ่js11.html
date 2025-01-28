@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ตัวอย่างที่ 11</title>
+</head>
+<body>
+  <h3>ปุ่มเปลี่ยนสี</h3>
+  <!-- ปุ่มและกล่องแสดงสี -->
+  <button onclick="changeColor()">เปลี่ยนสี</button>
+  <div id="colorBox" style="width: 100px; height: 100px; border: 1px solid black;"></div>
+
+  <script>
+    function getRandomColor() {
+      // สุ่มค่าสี RGB
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+      return `rgb(${r},${g},${b})`;
+    }
+
+    function changeColor() {
+      // เปลี่ยนสีพื้นหลังของกล่อง
+      document.getElementById("colorBox").style.backgroundColor = getRandomColor();
+    }
+  </script>
+</body>
+</html>
