@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ตัวอย่างที่ 13</title>
+</head>
+<body>
+  <h3>รายการซื้อของ</h3>
+  <!-- ช่องกรอกข้อมูลและรายการ -->
+  <input type="text" id="itemInput" placeholder="ใส่ชื่อสินค้า" />
+  <button onclick="addItem()">เพิ่มรายการ</button>
+  <ul id="shoppingList"></ul>
+
+  <script>
+    function addItem() {
+      const input = document.getElementById("itemInput");
+      const itemName = input.value.trim();
+      if (itemName !== "") {
+        const li = document.createElement("li");
+        li.textContent = itemName;
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "ลบ";
+        deleteBtn.onclick = () => li.remove();
+
+        li.appendChild(deleteBtn);
+        document.getElementById("shoppingList").appendChild(li);
+
+        input.value = "";
+      }
+    }
+  </script>
+</body>
+</html>
